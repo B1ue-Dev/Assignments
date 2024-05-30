@@ -3,7 +3,7 @@
 class Int {
 private:
     int value;
-    static const int INT_MAX = 2147483647;
+    static const int MAX_INT = 2147483647;
     static const int MIN_INT = -2147483647;
 
     void checkOverflow(long double result) {
