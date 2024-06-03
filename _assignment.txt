@@ -1,0 +1,190 @@
+Assignments
+1) One student for each.
+2) Register before deadline: 31/03/2024, using excel file from G-class.
+3) Submit your work by the end of this course (12/04/2024).
+2) Requirements:
+* Implement in C++ program (create a class).
+* Explain your codes by using comments.
+* Submit your source code without error.
+---------------------------------------------------------------------------------------------
+A:Object & class
+---------------------------------------------------------------------------------------------
+A2. Imagine a tollbooth (trạm thu phí) at a bridge. Cars passing by the booth are expected to pay a 50 cent toll. Mostly they do, but sometimes a car goes by without paying. The tollbooth keeps track of the number of cars that have gone by, and of the total amount of money collected.
+Model this tollbooth with a class called tollBooth. The two data items are a type unsigned int to hold the total number of cars, and a type double to hold the total amount of money collected. A constructor initializes both of these to 0. A member function called payingCar() increments the car total and adds 0.50 to the cash total. Another function, called nopayCar(), increments the car total but adds nothing to the cash total. Finally, a member function called display() displays the two totals. Make appropriate member functions const.
+Include a main() program to test this class. This program should allow the user to push one key to count a paying car, and another to count a nonpaying car. Pushing the Esc key should cause the program to print out the number of nopaycars, number of payingcars, total cars, total cash, and then exit.
+
+A4. Create an employee class, it contains three members: an employee number, an employee name,  and the employee’s compensation (in dollars). The member data should comprise an int for storing the employee number, a string for empployee name and a float for storing the employee’s compensation. Member functions should allow the user to enter this data and display it (getemploy() and putemploy() functions). Write a main() that allows the user to enter data for three employees and display it.
+
+A5. Start with the Date structure that contains three data members: month, day of the
+month, and year, all of type int (unsigned). It should also have two member functions: getdate(), which allows the user to enter a date in 12/31/02 format (mm/dd/yy:US format), and showdate(), which displays the date in French format (dd/mm/yy).
+
+A6. Extend the employee class of Exercise A4 to include a Date class (see Exercise A5) and an etype (employee type), which is an int variable. An object of the date class should be used to hold the date of first employment; that is, the date when the employee was hired. The etype variable should hold the employee’s type: laborer(1), secretary(2), manager(3), and so on. These two items will be private member data in the employee definition, just like the employee number and salary. You’ll need to extend the getemploy() and putemploy() functions to obtain this new information from the user and display it. These functions will probably need switch statements to handle the etype variable. Write a main() program that allows the user to enter data for three employee variables and then displays this data.
+
+A7. In ocean navigation, locations are measured in degrees and minutes of latitude and longitude. Thus if you’re lying off the mouth of Papeete Harbor in Tahiti, your location is 149 degrees 34.8 minutes west longitude, and 17 degrees 31.5 minutes south latitude. This is written as 149°34.8’ W, 17°31.5’ S. There are 60 minutes in a degree (An older system also divided a minute into 60 seconds, but the modern approach is to use decimal minutes instead). Longitude is measured from 0 to 180 degrees, east or west from Greenwich, England, to the international dateline in the Pacific. Latitude is measured from 0 to 90 degrees, north or south from the equator to the poles.
+Create a class angle that includes three member variables: an int for degrees, a float for minutes, and a char for the direction letter (N, S, E, or W). This class can hold either a latitude variable or a longitude variable. Write one member function to obtain an angle value (in degrees and minutes) and a direction from the user, and a second to display the angle value in 179°59.9’ E format. Also write a three-argument constructor.
+Write a main() program that displays an angle initialized with the constructor, and then, within a loop, allows the user to input any angle value, and then displays the value. You can use the hex character constant ‘\xF8’ , which usually prints a degree (°) symbol.
+
+A8. Create a class that includes a data member that holds a “serial number” for each object created from the class. That is, the first object created will be numbered 1, the second 2, and so on.To do this, you’ll need another data member that records a count of how many objects have been created so far. (This member should apply to the class as a whole; not to individual objects. What keyword specifies this?) Then, as each object is created, its constructor can examine this count member variable to determine the appropriate serial number for the new object. Add a member function that permits an object to report its own serial number. Then write a main() program that creates three objects, and queries each one about its serial number (list all of their serial number). They should respond 'I am object number 2', and so on.
+
+A9. Create a fraction class. Member data is the fraction’s numerator and denominator. Member functions should accept input from the user in the form 3/5 , and output the fraction’s value in the same format. Another member function should add two fraction values. Write a main() program that allows the user to repeatedly input two fractions and then displays their sum. After each operation, ask whether the user wants to continue.
+
+A10. Create a class called ship that incorporates a ship’s number and location. Use the approach of Exercise A8 to number each ship object as it is created. Use two variables of the angle class from Exercise A7 to represent the ship’s latitude and longitude. A member function of the ship class should get a position from the user and store it in the object; another should report the serial number and position.
+Write a main() program that creates three ships, asks the user to input the position of each, and then displays each ship’s number and position.
+
+A11. Modify the fraction class in Exercise A9: There should be member functions for input and output, as well as for the four arithmetical operations: +,-,*,/. While you’re at it, you might as well install the capability to reduce fractions to lowest terms. Member function fraction::lowterms() will do the trick. You can call this function at the end of each arithmetic function, or just before peforming output. You’ll also need the usual member functions: four arithmetic operations,input, and display. You may find a two-argument constructor useful.
+Note that one advantage of the OOP approach is that an entire class can be used, without modification, in a different program. Use the fraction class from Exercise A11 in a program that generates a multiplication table for fractions. Let the user input a denominator,and then generate all combinations of two such fractions that are between 0 and 1, and multiply them together.
+Here’s an example of the output if the denominator is 6:
+    1/6     1/3     1/2     2/3     5/6
+-----------------------------------------
+1/6 1/36    1/18    1/12    1/9     5/36
+1/3 1/18    1/9     1/6     2/9     5/18
+1/2 1/12    1/6     1/4     1/3     5/12
+2/3 1/9     2/9     1/3     4/9     5/9
+5/6 5/36    5/18    5/12    5/9     25/36
+
+---------------------------------------------------------------------------------------------
+B:Overloading
+---------------------------------------------------------------------------------------------
+B4. Create a class that imitates part of the functionality of the basic data type int. Call the class Int (note different capitalization). The only data in this class is an int variable. Include member functions to initialize an Int to 0, to initialize it to an int value, to display it (it looks just like an int), and to add two Int values.
+Create one uninitialized and two initialized Int values, adding the two initialized values and placing the response in the uninitialized value, and then displaying this result.
+Overload four integer arithmetic operators ( + , - , * , and / ) so that they operate on objects of type Int. If the result of any such arithmetic operation exceeds the normal range of int's (in a 32-bit environment)—from 2,147,483,648 to –2,147,483,647—have the operator print a warning and terminate the program. Such a data type might be useful where mistakes caused by arithmetic overflow are unacceptable. Hint: To facilitate checking for overflow, perform the calculations using type long double. Write a program to test this class.
+
+B5. Create a class called Time that has separate int member data for hours, minutes, and seconds. One constructor should initialize this data to 0, and another should initialize it to fixed values. Another member function should display it, in 11:59:59 format. The final member function should add two objects of type Time passed as arguments.
+A main() program should create two initialized Time objects (should they be const ?) and one that isn’t initialized. Then it should add the two initialized values together, leaving the result in the third Time variable. Finally it should display the value of this third variable. Make appropriate member functions const.
+Augment the Time class to include overloaded 1 second increment  ( ++ ) and 1 second decrement ( -- ) operators that operate in both prefix and postfix notation and return values. Add statements to main() to test these operators.
+Add to the Time class the ability to subtract two time values using the overloaded ( - ) operator, and to multiply a time value by a number of type float, using the overloaded ( * ) operator.
+
+B7. Modify the fraction class in the four-function fraction calculator from Exercise A11 in A so that it uses overloaded operators for addition, subtraction, multiplication, and division. Also overload the == and != comparison operators, and use them to exit from the loop if the user enters 0/1, 0/1 for the values of the two input fractions.You may want to modify the lowterms() function so that it returns the value of its argument reduced to lowest terms. This makes it more useful in the arithmetic functions, where it can be applied just before the answer is returned.
+
+B9. Create a safearay class so that the user can specify both the upper and lower bound of the internal array (indexes running from 100 to 200, for example). Have the overloaded subscript operator check the index each time the array is accessed to ensure that it is not out of bounds. You’ll need to add a two-argument constructor that specifies the upper and lower bounds. Since we have not yet learned how to allocate memory dynamically, the member data will still be an array that starts at 0 and runs up to 99, but perhaps you can map the indexes for the safearay into different indexes in the real int array. For example, if the client selects a range from 100 to 175, you could map this into the range from arr[0] to arr[75].
+
+B10. Create a class Polar that represents the points on the plain as polar coordinates (radius and angle). Create an overloaded +operator for addition of two Polar quantities.
+“Adding” two points on the plain can be accomplished by adding their X coordinates and then adding their Y coordinates. This gives the X and Y coordinates of the “answer.” Thus you’ll need to convert two sets of polar coordinates to rectangular coordinates, add them, then convert the resulting rectangular representation back to polar.
+
+---------------------------------------------------------------------------------------------
+C:Inheritance
+---------------------------------------------------------------------------------------------
+C1. Imagine a publishing company that markets both book and audiocassette versions of its works. Create a class publication that stores the title (a string) and price (type float) of a publication. From this class derive two classes: book, which adds a page count (type int), and tape, which adds a playing time in minutes (type float). Each of these three classes should have a getdata() function to get its data from the user at the keyboard, and a putdata() function to display its data. Write a main() program to test the book and tape classes by creating instances of them, asking the user to fill in data with getdata(), and then displaying the data with putdata().
+
+C3. Start with the publication, book, and tape classes of Exercise C1. Add a base class sales that holds an array of three float s so that it can record the dollar sales of a particular publication for the last three months. Include a getdata() function to get three sales amounts from the user, and a putdata() function to display the sales figures. Alter the book and tape classes so they are derived from both publication and sales. An object of class book or tape should input and output sales data along with its other data. Write a main() function to create a book object and a tape object and exercise their input/output capabilities.
+
+C4. Assume that the publisher in Exercises C1 and C3 decides to add a third way to distribute books: on computer disk, for those who like to do their reading on their laptop. Add a disk class that, like book and tape, is derived from publication. The disk class should incorporate the same member functions as the other classes. The data item unique to this class is the disk type: either CD or DVD. You can use an int type to store this item. The user could select the appropriate type by typing c or d.
+
+C5. Derive a class called employee2 from the employee class Exercise A6. This new class should add a type double data item called compensation, and also an enum type called period to indicate whether the employee is paid hourly, weekly, or monthly. For simplicity you can change the manager, scientist, and laborer classes so they are derived from employee2 instead of employee. However, note that in many circumstances it might be more in the spirit of OOP to create a separate base class called compensation and three new classes manager2, scientist2, and laborer2, and use multiple inheritance to derive these three classes from the original manager, scientist, and laborer classes and from compensation. This way none of the original classes needs to be modified.
+
+C6. Start with Exercise B9 in B. Keep the safearay class the same as in that program, and, using inheritance, derive the capability for the user to specify both the upper and lower bounds of the array in a constructor. This is similar to Exercise B9, except that inheritance is used to derive a new class (you can call it safehilo) instead of modifying the original class.
+
+C9. Start with the publication, book, and tape classes of Exercise C1. Suppose you want to add the date of publication for both books and tapes. From the publication class, derive a new class called publication2 that includes this member data. Then change book and tape so they are derived from publication2 instead of publication. Make all the necessary changes in member functions so the user can input and output dates along with the other data. For the dates, you can use the date class from Exercise A5 in A, which stores a date as three int s, for month, day, and year.
+
+C10. There is only one kind of manager in Exercise C5. Any serious company has executives as well as managers. From the manager class derive a class called executive. (We’ll assume an executive is a high-end kind of manager.) The additional data in the executive class will be the size of the employee’s yearly bonus and the number of shares of company stock held in his or her stock-option plan. Add the appropriate member functions so these data items can be input and displayed along with the other manager data.
+
+C11. Various situations require that pairs of numbers be treated as a unit. For example, each screen coordinate has an x (horizontal) component and a y (vertical) component. Represent such a pair of numbers as a structure called pair that comprises two int member variables. Now, assume you want to be able to store pair variables on a stack. That is, you want to be able to place a pair (which contains two integers) onto a stack using a single call to a push() function with a structure of type pair as an argument, and retrieve a pair using a single call to a pop() function, which will return a structure of type pair.
+Start with the Stack class defined as:
+#define MAX 3
+class Stack
+{
+protected:
+    int st[MAX]; //stack: array of integers
+    int top; //index to top of stack
+public:
+    Stack() { top = -1; }
+    void push(int var) { st[++top] = var; }
+    int pop() { return st[top--]; }
+};
+Derive a new class called pairStack. This new class need contain only two members: the overloaded push() and pop() functions. The pairStack::push() function will need to make two calls to Stack2::push() to store the two integers in its pair, and the pairStack::pop() function will need to make two calls to Stack2::pop(). Write a main() function to show pairStack capabilities.
+---------------------------------------------------------------------------------------------
+D:Pointers
+---------------------------------------------------------------------------------------------
+D3. Start with an array of pointers to strings representing the days of the week (MON,TUE,..), provide functions to sort the array into alphabetical order, not sort the strings.
+
+D4. Add a destructor to the linklist. It should delete all the links when a linklist object is destroyed. It can do this by following along the chain, deleting each link as it goes. You can test the destructor by having it display a message each time it deletes a link; it should delete the same number of links that were added to the list. (A destructor is called automatically by the system for any existing objects when the program exits.)
+
+D5. Suppose you have a main() with three local arrays, all the same size and type (say float). The first two are already initialized to values. Write a function called addarrays() that accepts the addresses of the three arrays as arguments; adds the contents of the first two arrays together, element by element; and places the results in the third array before returning. A fourth argument to this function can carry the size of the arrays. Use pointer notation throughout; the only place you need brackets is in defining the arrays.
+
+D9. Let’s say that you need to store 100 integers so that they’re easily accessible. However, let’s further assume that there’s a problem: The memory in your computer is so fragmented that the largest array that you can use holds only 10 integers (Such problems actually arise, although usually with larger memory objects.) You can solve this problem by defining 10 separate int arrays of 10 integers each, and an array of 10 pointers to these arrays. The int arrays can have names like a0, a1, a2, and so on. The address of each of these arrays can be stored in the pointer array of type int*, which can have a name like ap (for array of pointers). You can then access individual integers using expressions like ap[j][k] , where j steps through the pointers in ap and k steps through individual integers in each array. This looks as if you’re accessing a two-dimensional array, but it’s really a group of one-dimensional arrays. Fill such a group of arrays with test data (say the numbers 0, 10, 20, and so on up to 990). Then display the data to make sure it’s correct.
+
+D10. As presented, Exercise D9 is rather inelegant because each of the 10 int arrays is declared in a different program statement, using a different name. Each of their addresses must also be obtained using a separate statement. You can simplify things by using new, which allows you to allocate the arrays in a loop and assign pointers to them at the same time:
+for(j=0; j<NUMARRAYS; j++) // allocate NUMARRAYS arrays
+*(ap+j) = new int[MAXSIZE]; // each MAXSIZE ints long
+Rewrite the program in Exercise D9 to use this approach. You can access the elements of the individual arrays using the same expression mentioned in Exercise D9, or you can use pointer notation: *(*(ap+j)+k) . The two notations are equivalent.
+
+D11. Create a class that allows you to treat the 10 separate arrays in Exercise D10 as a single one-dimensional array, using array notation with a single index. That is, statements in main() can access their elements using expressions like a[j] , even though the class member functions must access the data using the two-step approach. Overload the sub-script operator [] to achieve this result. Fill the arrays with test data and then display it. Although array notation is used in the class interface in main() to access “array” elements, you should use only pointer notation for all the operations in the implementation (within the class member functions).
+
+---------------------------------------------------------------------------------------------
+E: Virtual Functions
+---------------------------------------------------------------------------------------------
+E1. Imagine the same publishing company described in Exercise C1 that markets both book and audiocassette versions of its works. As in that exercise, create a class called publication that stores the title (a string) and price (type float) of a publication.
+From this class derive two classes: book , which adds a page count (type int); and tape, which adds a playing time in minutes (type float). Each of the three classes should have a getdata() function to get its data from the user at the keyboard, and a putdata() function to display the data.
+Write a main() program that creates an array of pointers to publication. In a loop, ask the user for data about a particular book or tape, and use new to create an object of type book or tape to hold the data. Put the pointer to the object in the array. When the user has finished entering the data for all books and tapes, display the resulting data for all the books and tapes entered, using a for loop and a single statement such as pubarr[j]->putdata(); to display the data from each object in the array.
+
+E4. Start with the program of Exercise E1, and add a member function of type bool called isOversize() to the book and tape classes. Let’s say that a book with more than 800 pages, or a tape with a playing time longer than 90 minutes (which would require two cassettes), is considered oversize. You can access this function from main() and display the string “Oversize” for oversize books and tapes when you display their other data. If book and tape objects are to be accessed using pointers to them that are stored in an array of type publication , what do you need to add to the publication base class? Can you instantiate members of this base class?
+
+E7. How can we store two different types on a stack, which is basically an array? in an array, could we store pointers to different types? They’re the same size, but the compiler still won’t allow us to store for example, type char* and type float* in the same array. The only way two different types of pointers can be stored in the same array is if they are derived from the same base class. So we can encapsulate a char in one class and a float in another, and arrange for both classes to be derived from a base class. Then we can store both kinds of pointers in an array of pointers to the base class. The base class doesn’t need to have any data of its own; it can be an abstract class from which no objects will be instantiated.
+Constructors can store the values in the derived classes in the usual way, but you’ll need to use pure virtual functions to get the values back out again. Here’s a possible scenario:
+class Token // abstract base class
+{
+public:
+    virtual float getNumber()=0; // pure virtual functions
+    virtual char getOperator()=0;
+};
+class Operator : public Token // an operator as a token in an expression, 1+2*3
+{
+private:
+    char oper; // operator (+, -, * or /)
+public:
+    Operator(char);     // constructor sets value for oper
+    char getOperator(); // gets value for oper
+    float getNumber();  // dummy function (it is empty for this concrete class)
+};
+class Number : public Token // a number as a token
+{
+private:
+    float fnum; // the number
+public:
+    Number(float);      // constructor sets value for fnum
+    float getNumber();  // gets value for fnum
+    char getOperator(); // dummy function (it is empty for this concrete class)
+};
+Token* atoken[100]; // holds types Operator* and Number*
+Base-class virtual functions need to be instantiated in all derived classes, or the classes themselves become abstract. Thus the Operator class needs a getNumber() function, even though it doesn’t store a number, and the Number class needs getOperand(), even though it doesn’t store an operator (so they are dummy). Expand this framework into a working program by adding a Stack class that holds Token objects, and a main() that pushes and pops various operators (such as +) and floating-point numbers (1) on and off the stack.
+
+---------------------------------------------------------------------------------------------
+F:Streams and Files
+---------------------------------------------------------------------------------------------
+F5. Create a Time class that includes integer member values for hours, minutes, and seconds.
+Make a member function get_time() that gets a time value from the user, and a function put_time() that displays a time in 12:59:59 format. Add error checking to the get_time() function to minimize user mistakes. This function should request hours, minutes, and seconds separately, and check each one for ios error status flags and the correct range. Hours should be between 0 and 23, and minutes and seconds between 0 and 59. Don’t input these values as strings and then convert them; read them directly as integers.
+In main() , use a loop to repeatedly get a time value from the user with get_time() and then display it with put_time() , like this:
+Enter hours: 11
+Enter minutes: 59
+Enter seconds: 59
+time = 11:59:59
+Do another (y/n)? y
+Enter hours: 25
+Hours must be between 0 and 23
+Enter hours: 1
+Enter minutes: 10
+Enter seconds: five
+Incorrect seconds input
+Enter seconds: 5
+time = 1:10:05
+
+F6. Make a class called name from the data (first name, middle initial, last name, employee number). Create member functions for this class that read and write an object’s data to a disk file, using ofstream, and read it back using ifstream. Use formatted data with the << and >> operators. The read and write member functions should be self-contained: they should include statements to open the appropriate stream and read or write a record.
+The write function can simply append its data to the end of the file. The read function will need a way to select which record it’s going to read. One way to do this is to call it with a parameter representing the record number. Once it knows which record it should read, how does the read function find the record? You might think you could use the seekg() function, but that isn’t much help because in formatted I/O the records are all different lengths (depending on the number of characters in the strings and the number of digits in the integer). So you’ll need to actually read records until you’ve skipped forward to the one you want.
+In main() , call these member functions to allow the user to enter data for a number of objects that are written to a file as they are entered. The program then displays all this data by reading it from the file.
+
+F7. Another approach to adding file stream I/O to an object is to make the file stream itself a static member of the object. Why do that? Well, it’s often conceptually easier to think of the stream as being related to the class as a whole than to the individual objects of the class. Also, it’s more efficient to open a stream only once, then read and write objects to it as needed. For example, once the file is opened, each time the read function is called it can return the data for the next object in the file. The file pointer will progress automatically through the file because the file is not closed between reads.
+Rewrite the program in Exercises 6 to use an fstream object as a static data item of the name class. Keep the same functionality that is in those exercises. Write a static function to open this stream, and another static function to reset the file pointer to the beginning of the file. You can use this reset function when you’re done writing and want to read all the records back from the file.
+
+F9. Start with Exercise B7, overload the insertion ( << ) and extraction ( >> ) operators for the fraction class. Note that you can chain the operators, so asking for a fraction, an operator, and a fraction should require only one statement: cin >> frac1 >> op >> frac2;
+
+F10. Add error checking to the extraction ( >> ) operator of the fraction class in Exercise F9. With error checking it’s probably better to prompt for the first fraction, then for the operator, and then for the second fraction, rather than using a single statement as shown in Exercise F9. This makes the format more comprehensible when it is interspersed with error messages.
+Enter first fraction: 5/0
+Denominator cannot be 0
+Enter fraction again: 5/1
+Enter operator (+, -, *, /): +
+Enter second fraction: one third
+Input error
+Enter fraction again: 1/3
+Answer is --------------------- 16/3
+Do another (y/n)?
+As implied in this sample interaction, you should check for ios error flags and also for a denominator of 0. If there’s an error, prompt the user to enter the fraction again.
