@@ -17,13 +17,26 @@ public:
         }
         return list[index - lowerbound];
     }
+};
 
+class SafeHilo : public SafeArray {
+public:
+    SafeHilo(int lower, int upper) : SafeArray(lower, upper) {}
 
+    int& operator[] (int index) {
+        if (index < lowerbound) {
+            throw "Index out of lower bound.";
+        }
+        if (index > upperbound) {
+            throw "Index out of upper bound.";
+        }
+        return list[index - lowerbound];
+    }
 };
 
 int main() {
     try {
-        SafeArray sa(100, 175);
+        SafeHilo sa(100, 175);
 
         sa[100] = 10;
         sa[175] = 20;

@@ -29,6 +29,18 @@ public:
     }
 };
 
+class Employee2 : private Employee {
+private:
+    double data;
+    enum period {hourly, weekly, monthly};
+};
+
+
+class Manager : private Employee2 {
+private:
+
+};
+
 int main() {
     Employee emp[3];
 
